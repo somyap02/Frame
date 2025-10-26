@@ -1,0 +1,154 @@
+/* Gallery.css */
+
+.gallery-page-container {
+  /* Adds padding to the top to avoid the fixed navbar,
+    and side/bottom padding for spacing. 
+    Adjust 80px to match your navbar's height.
+  */
+  padding: 80px 5% 20px; 
+}
+
+.gallery-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  /* This assumes your body text color is already dark.
+    If text is light, change this color to #fff or #e0e0e0
+  */
+  color: #333; 
+  margin-bottom: 30px;
+}
+
+.gallery-grid {
+  display: grid;
+  /* This creates a responsive grid. It will fit as many 300px
+    columns as it can, then stretch them to fill the space.
+  */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+/* This is the "glass" card style, adapted for artworks.
+  It's based on your Upload page's .glass-card style.
+*/
+.artwork-card {
+  /* Glassmorphism Effect */
+  background: rgba(255, 255, 255, 0.45); /* Same as your upload form */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.15);
+  
+  border-radius: 15px; /* Rounded corners */
+  overflow: hidden; /* Ensures image corners are clipped */
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.artwork-card:hover {
+  transform: translateY(-5px); /* Nice hover effect */
+  box-shadow: 0 12px 35px 0 rgba(0, 0, 0, 0.2);
+}
+
+.artwork-image {
+  width: 100%;
+  height: 220px; /* Taller image height for gallery */
+  object-fit: cover; /* Ensures image covers the area, no distortion */
+}
+
+.artwork-content {
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Makes card content fill the space */
+}
+
+/* Text styles (using dark colors as requested) */
+.artwork-content h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #222;
+  margin: 0 0 8px 0;
+}
+
+.artwork-content p {
+  font-size: 0.95rem;
+  color: #444;
+  margin: 0 0 12px 0;
+  flex-grow: 1; /* Pushes price to the bottom */
+}
+
+.artwork-content strong {
+  font-size: 1.2rem;
+  color: #000;
+  font-weight: 700;
+  margin-top: auto; /* Aligns price to the bottom */
+}
+
+/* --- Add these styles to the bottom of Gallery.css --- */
+
+.empty-gallery-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0; /* Add some space */
+}
+
+.empty-gallery-card {
+  /* This is a .glass-card, but with specific layout */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 40px 30px;
+  max-width: 500px;
+  animation: fadeIn 0.8s ease-out; /* Your fade-in animation */
+}
+
+/* Keyframe for animation (if not already in a global file) */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.empty-gallery-icon {
+  color: #6a5acd; /* Theme purple */
+  margin-bottom: 20px;
+}
+
+.empty-gallery-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #222;
+  margin: 0 0 10px 0;
+}
+
+.empty-gallery-message {
+  font-size: 1.05rem;
+  color: #444;
+  line-height: 1.6;
+  margin: 0 0 30px 0;
+}
+
+
+/* --- Button Styles (re-used from other pages) --- */
+
+.cta-button.primary {
+  display: inline-block;
+  background-color: #6a5acd;
+  color: white;
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button.primary:hover {
+  background-color: #5b48b6;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}

@@ -1,0 +1,61 @@
+# ---- Node / React ----
+frontend/node_modules/
+frontend/build/
+frontend/.env
+frontend/.DS_Store
+
+# ---- Java / Maven ----
+backend/target/
+backend/.classpath
+backend/.project
+backend/.settings/
+backend/.idea/
+backend/.vscode/
+backend/.env
+*.log
+
+# ---- OS / IDE files ----
+.DS_Store
+Thumbs.db
+*.iml
+
+# ---- Docker ----
+*.pid
+*.tar
+**/db_data/
+docker-compose.override.yml
+.env
+.env.local
+
+# ---- Jenkins ----
+jenkins_home/
+Jenkinsfile.backup
+*.jenkinsfile~
+*.bak
+
+# ---- GitHub Actions ----
+.github/workflows/*.log
+.github/workflows/tmp/
+.github/actions-cache/
+.github/secrets/
+actions-runner/
+actions-runner/_work/
+
+# ---- AWS Deployment ----
+aws-credentials.json
+*.pem
+*.key
+*.ppk
+aws_logs/
+terraform.tfstate*
+.ec2/
+*.zip
+
+# ---- Misc ----
+*.tmp
+*.bak
+*.swp
+logs/
+uploads/
+coverage/
+dist/

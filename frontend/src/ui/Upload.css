@@ -1,0 +1,158 @@
+/* --- NEW RULE TO FIX WHITE GAPS ---
+  Applies background to the whole page and removes default margin 
+*/
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  background-image: url('../../public/images/bg-image.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333; /* Default text color set to dark gray/black */
+}
+
+/* --- UPDATED CONTAINER ---
+  Removed background and color properties, as they are now on the body
+*/
+.upload-page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center vertically */
+  min-height: 100vh; /* Full viewport height */
+  padding: 36px;
+}
+
+/* --- UPDATED GLASS CARD ---
+   Increased background opacity for better contrast with black text 
+*/
+.glass-card {
+  width: 100%;
+  max-width: 500px;
+  padding: 30px;
+  border-radius: 15px;
+  /* Increased opacity from 0.15 to 0.45 for readability */
+  background: rgba(255, 255, 255, 0.45); 
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: grid;
+  gap: 18px;
+  animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- UPDATED TEXT STYLES --- */
+
+.card-title {
+  text-align: center;
+  color: #222; /* Changed from light to dark */
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.8em;
+  font-weight: 600;
+  text-shadow: none; /* Removed shadow, as it's for light text on dark */
+}
+
+.form-group {
+  display: grid;
+  gap: 8px;
+}
+
+.form-group label {
+  font-weight: 500;
+  color: #333; /* Changed from light to dark */
+  font-size: 0.95rem;
+}
+
+/* --- UPDATED INPUTS & TEXTAREA --- */
+
+.upload-form input[type="text"],
+.upload-form input[type="number"],
+.upload-form input[type="url"],
+.upload-form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  /* Increased opacity for better contrast */
+  background: rgba(255, 255, 255, 0.3);
+  color: #000; /* Changed from white to black */
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.3s, background-color 0.3s, box-shadow 0.3s;
+}
+
+/* Placeholder text color changed to dark */
+.upload-form input::placeholder,
+.upload-form textarea::placeholder {
+  color: #555; /* Changed from light to dark */
+}
+
+.upload-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Focus effect for inputs and textarea */
+.upload-form input:focus,
+.upload-form textarea:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.5);
+  /* Increased opacity on focus */
+  background-color: rgba(255, 255, 255, 0.5); 
+  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.05); /* Changed shadow to be dark */
+}
+
+/* --- UPLOAD BUTTON (Unchanged, still looks good) --- */
+
+.upload-button {
+  background-color: #6a5acd;
+  color: white;
+  border: none;
+  padding: 14px 20px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  margin-top: 15px;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.upload-button:hover {
+  background-color: #5b48b6;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.upload-button:active {
+  transform: translateY(0);
+  background-color: #5b48b6;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .glass-card {
+    padding: 25px;
+    margin: 10px;
+  }
+
+  .card-title {
+    font-size: 1.5em;
+  }
+
+  .upload-button {
+    padding: 12px 18px;
+    font-size: 1rem;
+  }
+}

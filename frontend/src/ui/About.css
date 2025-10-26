@@ -1,0 +1,143 @@
+/* --- Base Page Layout --- */
+.about-page-container {
+  /* Pads content away from the navbar and edges */
+  padding: 100px 5% 40px;
+  box-sizing: border-box;
+  
+  /* Centers the card on the page */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+}
+
+/* --- The Main Glass Card --- */
+/* This re-uses your established glass-card theme */
+.about-card {
+  width: 100%;
+  max-width: 900px; /* Wider for better text flow */
+  padding: 40px 50px;
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 15px;
+  animation: fadeIn 0.8s ease-out; /* Your fade-in animation */
+}
+
+/* Keyframe for animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Text & Content Styling --- */
+.about-card h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #222;
+  text-align: center;
+  margin: 0 0 20px 0;
+}
+
+.about-mission {
+  font-size: 1.25rem;
+  color: #333;
+  text-align: center;
+  margin: 0 0 30px 0;
+  line-height: 1.6;
+}
+
+.about-card h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #222;
+  margin: 35px 0 15px 0;
+  /* Futuristic purple underline */
+  padding-bottom: 5px;
+  border-bottom: 2px solid #6a5acd; 
+  display: inline-block; /* Makes border-bottom only wrap text */
+}
+
+.about-card p {
+  font-size: 1.05rem;
+  color: #444;
+  line-height: 1.7;
+  margin: 0 0 15px 0;
+}
+
+/* --- How It Works Section --- */
+.how-it-works-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two-column layout */
+  gap: 25px;
+  margin-top: 25px;
+}
+
+.about-feature {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.2); /* Faint inner card */
+  border-radius: 10px;
+}
+
+.feature-icon {
+  color: #6a5acd; /* Icon color matches the theme */
+  margin-bottom: 10px;
+}
+
+.about-feature h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #222;
+  margin: 0 0 10px 0;
+}
+
+/* --- Call to Action Section --- */
+.about-cta {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.about-cta p {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Re-using the button style from Homepage.css */
+.cta-button.primary {
+  display: inline-block;
+  background-color: #6a5acd;
+  color: white;
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button.primary:hover {
+  background-color: #5b48b6;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Responsive for mobile --- */
+@media (max-width: 768px) {
+  .how-it-works-grid {
+    grid-template-columns: 1fr; /* Stack columns on mobile */
+  }
+
+  .about-card {
+    padding: 30px 25px;
+  }
+
+  .about-card h1 {
+    font-size: 2.2rem;
+  }
+}

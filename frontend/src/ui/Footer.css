@@ -1,0 +1,72 @@
+.main-footer {
+  /* This margin pushes it down from the content above it.
+     Your page content container should have padding-bottom.
+  */
+  margin-top: 50px; 
+  width: 100%;
+  padding: 30px 5%; /* Vertical and horizontal padding */
+  box-sizing: border-box;
+
+  /* Glassmorphism Effect (matches your theme) */
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  
+  /* Swapped border-bottom (from navbar) to border-top */
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  
+  /* Swapped shadow to be on top */
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Footer Content Layout --- */
+.footer-content {
+  max-width: 1000px; /* Constrains content width */
+  margin: 0 auto; /* Centers the content */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center-aligns all items */
+  gap: 20px; /* Space between links, socials, and text */
+}
+
+/* --- Quick Links --- */
+.footer-links {
+  display: flex;
+  gap: 25px; /* Space between each link */
+  flex-wrap: wrap; /* Allows links to stack on small screens */
+  justify-content: center;
+}
+
+.footer-link {
+  color: #333; /* Dark text */
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #6a5acd; /* Theme purple on hover */
+}
+
+/* --- Social Icons --- */
+.footer-socials {
+  display: flex;
+  gap: 25px; /* Space between icons */
+}
+
+.social-icon {
+  color: #444; /* Slightly lighter dark text */
+  transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #6a5acd; /* Theme purple on hover */
+}
+
+/* --- Copyright Text --- */
+.footer-copyright {
+  color: #555;
+  font-size: 0.9rem;
+  text-align: center;
+  line-height: 1.5; /* For the two-line text */
+}
